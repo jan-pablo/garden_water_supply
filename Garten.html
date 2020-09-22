@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <script src="js/fhem-tablet-ui.js" defer></script>
+
+    <title>FHEM-Tablet-UI</title>
+</head>
+
+<body>
+
+    <div class="gridster">
+        <ul>
+
+			<li data-row="1" data-col="1" data-sizex="1" data-sizey="1" data-template="menu.html"></li>
+		
+			<li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+			<header>Bewässerung</header>					
+				<div class="sheet">
+					<div class="row">		
+						<div class="col-1-4">
+							<div data-type="switch" 
+								 data-device="GA_Relai1"
+								 data-icon="fa-tint"
+								 data-set-states='["relai1on","relai1off"]'
+								 data-states='["relai1off","relai1on"]'
+								 data-colors='["white","white"]'
+								 data-background-colors='["red","green"]'>
+							</div>	
+							<div data-type="label" class="">Relai 1</div>
+							<div data-type="label" class="half-transparent" data-device="GA_Relai1" data-get="state"></div>
+						</div>
+						<div class="col-1-4">
+							<div data-type="switch" 
+								 data-device="GA_Relai1a"
+								 data-icon="fa-tint"
+								 data-set-states='["relai1aon","relai1aoff"]'
+								 data-states='["relai1aoff","relai1aon"]'
+								 data-colors='["white","white"]'
+								 data-background-colors='["red","green"]'>
+							</div>	
+							<div data-type="label" class="">Relai 1 a</div>
+							<div data-type="label" class="half-transparent" data-device="GA_Relai1a" data-get="state"></div>
+						</div>
+						<div class="col-1-4">
+							<div data-type="switch" 
+								 data-device="GA_Relai1b"
+								 data-icon="fa-tint"
+								 data-set-states='["relai1bon","relai1boff"]'
+								 data-states='["relai1boff","relai1bon"]'								 
+								 data-colors='["white","white"]'
+								 data-background-colors='["red","green"]'>
+							</div>	
+							<div data-type="label" class="">Relai 1 b</div>
+							<div data-type="label" class="half-transparent" data-device="GA_Relai1b" data-get="state"></div>
+						</div>
+						<div class="col-1-4">						
+							<div data-type="label"
+								 data-device="GA_Bew" 
+								 data-get="measured-tempRoom"
+								 data-unit="°C"
+								 class="small top-space">
+							</div>
+							<div data-type="label"
+								 data-device="GA_Bew" 
+								 data-get="calculated-dewpoint"
+								 data-unit="°C dewpoint"
+								 class="small top-space">
+							</div>
+							<div data-type="label"
+								 data-device="GA_Bew" 
+								 data-get="measured-humidity"
+								 data-unit="%"
+								 class="small top-space">
+							</div>
+						</div>
+					</div>
+					<div class="row">		
+						<div class="col-1-4">
+							<div data-type="switch" 
+								 data-device="GA_ObererPort"
+								 data-icon="fa-tint"
+								 data-set-states='["obererporton","obererportoff"]'
+								 data-states='["relai1aoff","relai1aon"]'
+								 data-colors='["white","white"]'
+								 data-background-colors='["red","green"]'>
+							</div>	
+							<div data-type="label" class="">oberer Port</div>
+							<div data-type="label" class="half-transparent" data-device="GA_ObererPort" data-get="state"></div>
+						</div>
+						<div class="col-1-4">
+							<div data-type="switch" 
+								 data-device="GA_UntererPort"
+								 data-icon="fa-tint"
+								 data-set-states='["untererporton","untererportoff"]'
+								 data-states='["relai1boff","relai1bon"]'
+								 data-colors='["white","white"]'
+								 data-background-colors='["red","green"]'>
+							</div>	
+							<div data-type="label" class="">unterer Port</div>
+							<div data-type="label" class="half-transparent" data-device="GA_UntererPort" data-get="state"></div>
+						</div>
+						<div class="col-1-4 left-narrow">		
+							<div data-type="circlemenu" class="cell circlemenu">
+								<ul class="menu">
+									<li><div data-type="symbol" 
+											data-device="" 
+											data-get="" 
+											data-state=""
+											data-icon="fa-tint"
+											data-color="red"></div>
+									</li>	
+									<li><div data-type="switch" 
+												data-device="GA_Timer"
+												 data-icon=""
+												 data-set-states='["irrigationTime15","irrigationTimeStop"]'
+												 data-states='["irrigationTimeStop","irrigationTime15"]'
+												 data-colors='["white","white"]'
+												 data-background-colors='["red","green"]'>15</div>
+									</li>
+									<li><div data-type="switch" 
+												data-device="GA_Timer"
+												 data-icon=""
+												 data-set-states='["irrigationTime30","irrigationTimeStop"]'
+												 data-states='["irrigationTimeStop","irrigationTime30"]'
+												 data-colors='["white","white"]'
+												 data-background-colors='["red","green"]'>30</div>
+									</li>
+									<li><div data-type="switch" 
+												data-device="GA_Timer"
+												 data-icon=""
+												 data-set-states='["irrigationTime60","irrigationTimeStop"]'
+												 data-states='["irrigationTimeStop","irrigationTime60"]'
+												 data-colors='["white","white"]'
+												 data-background-colors='["red","green"]'>60</div>
+									</li>
+									<li><div data-type="switch" 
+												data-device="GA_Timer"
+												 data-icon=""
+												 data-set-states='["irrigationTime90","irrigationTimeStop"]'
+												 data-states='["irrigationTimeStop","irrigationTime90"]'
+												 data-colors='["white","white"]'
+												 data-background-colors='["red","green"]'>90</div>
+									</li>
+								</ul>
+							</div>
+							<div data-type="label" class="">Timer</div>
+							<div data-type="label" class="half-transparent" data-device="GA_Timer" data-get="state"></div>
+						</div>	
+						<div class="col-1-4">						
+							<div data-type="label"
+								 data-device="GA_Bew" 
+								 data-get="measured-flowratelh"
+								 data-unit="L/h"
+								 class="top-space">
+							</div>
+							<div data-type="label"
+								 data-device="GA_Bew" 
+								 data-get="measured-flowratelmin"
+								 data-unit="L/min"
+								 class="top-space">
+							</div>
+							<div data-type="label"
+								 data-device="GA_Bew" 
+								 data-get="measured-volumel"
+								 data-unit="L"
+								 class="top-space">
+							</div>
+							<div data-type="label" 
+								data-device="GA_Bew"
+								data-get='TimerMinutes'
+								data-fix='1'
+								data-unit="Minutes left"
+								class="bold top-space">
+							</div>
+						</div>							
+					</div>
+				</div>					
+			</li>
+					
+
+			
+			<li data-row="1" data-col="4" data-sizex="2" data-sizey="3">
+			<header></header>
+
+			
+	
+			
+			</li>
+			
+			<li data-row="2" data-col="1" data-sizex="1" data-sizey="2">
+			<header>Status</header>
+			
+			<div data-type="clock" data-format="H:i:s" class="bigger blue"></div>
+			<div data-type="clock" data-format="l, j. F Y" class="normal blue"></div>
+			
+			
+				<div class="row top-space">
+					<div class="col-1-2">
+						<div data-type="label" class="cell darker top-space">Heute</div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc0_tempMin" data-unit="%B0C%0A min" class="cell small"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc0_tempMax" data-unit="%B0C%0A max" class="cell narrow"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc0_chOfRainDay" data-unit="% chance rain" class="cell narrow"></div>
+					</div>					
+					<div class="col-1-2">					
+						<div data-type="label" class="cell darker top-space">Morgen</div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc1_tempMin" data-unit="%B0C%0A min" class="cell small"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc1_tempMax" data-unit="%B0C%0A max" class="cell narrow"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc1_chOfRainDay" data-unit="% chance rain" class="cell narrow"></div>
+					</div>			
+				</div>
+				<div class="row top-space">
+					<div class="col-1-2">
+						<div data-type="label" data-device="WetterProplanta" data-get="fc2_date" class=""></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc2_tempMin" data-unit="%B0C%0A min" class="cell small"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc2_tempMax" data-unit="%B0C%0A max" class="cell narrow"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc2_chOfRainDay" data-unit="% chance rain" class="cell narrow"></div>
+					</div>					
+					<div class="col-1-2">					
+						<div data-type="label" data-device="WetterProplanta" data-get="fc3_date" class=""></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc3_tempMin" data-unit="%B0C%0A min" class="cell small"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc3_tempMax" data-unit="%B0C%0A max" class="cell narrow"></div>
+						<div data-type="label" data-device="WetterProplanta" data-get="fc3_chOfRainDay" data-unit="% chance rain" class="cell narrow"></div>
+					</div>			
+				</div>
+				<div data-type="label"
+					 data-device="Sonnenaufgang" 
+					 data-get="state"
+					 data-unit=" Sonnenaufgang"
+					 class="small top-space">
+				</div>
+				<div data-type="label"
+					 data-device="Sonnenuntergang" 
+					 data-get="state"
+					 data-unit=" Sonnenuntergang"
+					 class="small top-space">
+				</div>
+			</li>
+			
+			
+		
+
+			<li data-row="2" data-col="2" data-sizex="2" data-sizey="2">
+			<header>Regenwassertank Vorne</header>
+				<div class="row">		
+					<div class="col-1-3">
+						<div data-type="label" 
+							data-device="RegentonneVorne"
+							data-get='ProzStand'
+							data-fix='0'
+							data-unit="%"
+							class="bold top-space">
+						</div>
+						<div data-type="label" 
+							data-device="RegentonneVorne"
+							data-get='Volumen'
+							data-fix='0'
+							data-unit="L"
+							class="top-space small">
+						</div>
+						<div data-type="label"
+							 data-device="RegentonneVorne" 
+							 data-get="sensor-time"
+							 class="top-space timestamp mini">
+						</div> 
+					    <div data-type="level" 
+							data-device='RegentonneVorne'  
+							data-get='ProzStand'
+							data-limits='["1","30","70"]'
+							data-colors='["red","yellow","green"]'
+							data-width="5em"
+							data-height="8em"
+							class="left-narrow top-narrow-2x">
+						</div>						
+					</div>
+					<div class="col-1-3">
+					
+					</div>
+				</div>
+			</li>
+
+
+			
+        </ul>
+    </div>
+</body>
+
+</html>
