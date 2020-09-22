@@ -1,0 +1,65 @@
+define GA_Relai1 MQTT_DEVICE
+attr GA_Relai1 IODev Mosquitto
+attr GA_Relai1 devStateIcon ON:rc_GREEN:OFF OFF:rc_RED:ON
+attr GA_Relai1 publishSet relai1on relai1off Garten
+attr GA_Relai1 stateFormat state
+attr GA_Relai1 subscribeReading_state Garten/Relay1/state
+attr GA_Relai1 webCmd relai1on: relai1off
+
+define GA_Relai1a MQTT_DEVICE
+attr GA_Relai1a IODev Mosquitto
+attr GA_Relai1a devStateIcon ON:rc_GREEN:OFF OFF:rc_RED:ON
+attr GA_Relai1a publishSet relai1aon relai1aoff Garten
+attr GA_Relai1a stateFormat state
+attr GA_Relai1a subscribeReading_state Garten
+attr GA_Relai1a webCmd relai1aon: relai1aoff
+
+define GA_Relai1b MQTT_DEVICE
+attr GA_Relai1b IODev Mosquitto
+attr GA_Relai1b devStateIcon ON:rc_GREEN:OFF OFF:rc_RED:ON
+attr GA_Relai1b publishSet relai1bon relai1boff Garten
+attr GA_Relai1b stateFormat state
+attr GA_Relai1b subscribeReading_state Garten
+attr GA_Relai1b webCmd relai1bon: relai1boff
+
+define GA_PortOben MQTT_DEVICE
+attr GA_PortOben IODev Mosquitto
+attr GA_PortOben devStateIcon ON:rc_GREEN:OFF OFF:rc_RED:ON
+attr GA_PortOben publishSet portobenon portobenoff Garten
+attr GA_PortOben stateFormat state
+attr GA_PortOben subscribeReading_state Garten/Relay1/state
+attr GA_PortOben webCmd portobenon: portobenoff
+
+define GA_ObererPort MQTT_DEVICE
+attr GA_ObererPort IODev Mosquitto
+attr GA_ObererPort devStateIcon ON:rc_GREEN:OFF OFF:rc_RED:ON
+attr GA_ObererPort publishSet obererporton obererportoff Garten
+attr GA_ObererPort stateFormat state
+attr GA_ObererPort subscribeReading_state Garten/Relay1a/state
+attr GA_ObererPort webCmd obererporton: obererportoff
+
+define GA_UntererPort MQTT_DEVICE
+attr GA_UntererPort IODev Mosquitto
+attr GA_UntererPort devStateIcon ON:rc_GREEN:OFF OFF:rc_RED:ON
+attr GA_UntererPort publishSet untererporton untererportoff Garten
+attr GA_UntererPort stateFormat state
+attr GA_UntererPort subscribeReading_state Garten/Relay1b/state
+attr GA_UntererPort webCmd untererporton: untererportoff
+
+define GA_Bew MQTT_DEVICE
+attr GA_Bew subscribeReading_measured-tempRoom Garten/Bew/temp
+attr GA_Bew subscribeReading_measured-humidity Garten/Bew/humidity
+attr GA_Bew subscribeReading_measured-pressure Garten/Bew/pressure
+attr GA_Bew subscribeReading_calculated-dewpoint Garten/Bew/dewpoint
+attr GA_Bew subscribeReading_measured-flowratelmin Garten/Bew/flowratelmin
+attr GA_Bew subscribeReading_measured-flowratelh Garten/Bew/flowratelh
+attr GA_Bew subscribeReading_measured-volumel Garten/Bew/volumel
+attr GA_Bew subscribeReading_measured-volumemicrol Garten/Bew/volumemicrol
+attr GA_Bew subscribeReading_timeWarningText Garten/Bew/timeWarningText
+attr GA_Bew subscribeReading_alarm Garten/Bew/alarm
+attr GA_Bew subscribeReading_irrigationTimer Garten/Bew/irrigationTimer
+attr GA_Bew subscribeReading_timerTimeLeft Garten/Bew/timerTimeLeft
+attr GA_Bew userReadings TimerMinutes {ReadingsVal("GA_Bew","timerTimeLeft",0)/60/1000}
+
+Telegram Nachricht bei timeWarnungText
+define NotifyBewaesserungIstAn notify GA_Bew:timeWarningText:.* set teleBot _msg @#Hausautomatisierung Bewässerung läuft seit 30 Minuten.
