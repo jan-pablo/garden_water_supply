@@ -2,7 +2,7 @@
 
 Goal:
 - Control of two water pipelines. Water can be send to either one or both water lines. 
-- Water flow rate is determind and used for S- and S+ control as well as to provide data for calculating water consumption (daily, weekly, monthly, yearly).
+- Water flow rate is determined and used for S- and S+ control as well as to provide data for calculating water consumption (daily, weekly, monthly, yearly).
 - Send all values (status and flow rates, summed volumes) to FHEM-OS by MQTT.
 - Accepting commands via MQTT for setting valves - connected to FHEM and FHEM-Tablet-UI  
 - Timer for autmatic closure of valves after a defined time
