@@ -253,7 +253,7 @@ void safety(){
 //Fluss > xyz =>> Alarm "HH Flow" + close all valves
   if ( flowRateLh > 2000 ) {   
         closeAllValves();
-        AlarmText = "Flowrate > 1000 L/h, Relais wurden geschlossen";                 // publish alarm text it via MQTT
+        AlarmText = "Flowrate > 2000 L/h, Relais wurden geschlossen";                 // publish alarm text it via MQTT
 //        mqttPublish(); Serial.println(AlarmText);
     }
 
